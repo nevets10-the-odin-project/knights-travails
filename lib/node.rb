@@ -1,14 +1,14 @@
 class Node
   include Comparable
 
-  attr_accessor :vertex, :moves
+  attr_accessor :root, :moves
 
   def initialize(root, moves)
-    @vertex = root
+    @root = root
     @moves = moves
   end
 
   def <=>(other)
-    vertex <=> other.vertex
+    root <=> other.root
   end
 end
