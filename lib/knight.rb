@@ -1,3 +1,5 @@
+require_relative 'node'
+
 class Knight
   attr_accessor :start_pos, :end_pos
 
@@ -10,7 +12,7 @@ class Knight
 
   def build_tree(root)
     valid_moves = validate_moves(root)
-    p valid_moves
+    Node.new(root, valid_moves)
   end
 
   def validate_moves(root)
