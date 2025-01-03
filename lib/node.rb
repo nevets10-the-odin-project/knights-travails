@@ -3,8 +3,8 @@ class Node
 
   attr_accessor :vertex, :moves
 
-  def initialize(vertex, moves)
-    @vertex = vertex
+  def initialize(root, moves)
+    @vertex = root
     @moves = moves
   end
 
