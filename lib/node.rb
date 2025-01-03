@@ -1,15 +1,14 @@
 class Node
   include Comparable
 
-  attr_accessor :data, :left_c, :right_c
+  attr_accessor :vertex, :moves
 
-  def initialize(data)
-    self.data = data
-    self.left_c = nil
-    self.right_c = nil
+  def initialize(vertex, moves)
+    @vertex = vertex
+    @moves = moves
   end
 
   def <=>(other)
-    data <=> other.data
+    vertex <=> other.vertex
   end
 end
