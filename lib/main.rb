@@ -6,3 +6,5 @@ def knight_moves(start_pos, end_pos)
 
   knight = Knight.new(start_pos, end_pos)
 end
+
+knight_moves([6, 7], [7, 7])
