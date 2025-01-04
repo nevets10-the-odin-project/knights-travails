@@ -8,4 +8,4 @@ def knight_moves(start_pos, end_pos)
   p knight.get_next_paths
 end
 
-knight_moves([6, 7], [7, 7])
+knight_moves([0, 0], [3, 3])
