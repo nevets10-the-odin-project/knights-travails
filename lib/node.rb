@@ -1,7 +1,7 @@
 class Node
   include Comparable
 
-  attr_accessor :root, :moves
+  attr_accessor :root, :children
 
   def initialize(root, moves = [])
     @root = root
