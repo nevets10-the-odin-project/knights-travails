@@ -1,12 +1,12 @@
 class Node
   include Comparable
 
-  attr_accessor :root, :children, :prev_root
+  attr_accessor :root, :children, :prev_node
 
-  def initialize(root, moves = [], prev_root = nil)
+  def initialize(root, moves = [], prev_node = nil)
     @root = root
     @children = moves
-    @prev_root = prev_root
+    @prev_node = prev_node
   end
 
   def <=>(other)
