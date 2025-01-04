@@ -6,7 +6,10 @@ def knight_moves(start_pos, end_pos)
 
   knight = Knight.new(start_pos, end_pos)
   path = knight.get_next_paths
-  p path
+  puts "You made it in #{path.length - 1} moves! Here's your path:"
+  path.each do |move|
+    p move
+  end
 end
 
-knight_moves([3, 3], [4, 3])
+knight_moves([7, 0], [0, 7])
