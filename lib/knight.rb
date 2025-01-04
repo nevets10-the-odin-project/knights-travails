@@ -23,19 +23,15 @@ class Knight
   def get_next_paths(cur_root = root)
     return if cur_root.nil?
 
-    end_found = false
     queue = [cur_root]
-    return_arr = []
 
-    # Setting a limited loop to test
-    until end_found
+    loop do
       cur_node = queue[0]
-      end_found = true if cur_node.root == end_pos
+
+      return cur_node if cur_node.children.include?(end_pos)
+
       cur_node.children.each { |move| queue << add_node(move, cur_node.root) }
-      return_arr << queue[0]
       queue.shift
     end
-
-    return_arr
   end
 end
