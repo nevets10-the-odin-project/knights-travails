@@ -3,9 +3,9 @@ class Node
 
   attr_accessor :root, :moves
 
-  def initialize(root, moves)
+  def initialize(root, moves = [])
     @root = root
-    @moves = moves
+    @children = moves
   end
 
   def <=>(other)
