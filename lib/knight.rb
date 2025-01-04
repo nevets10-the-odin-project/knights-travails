@@ -10,9 +10,9 @@ class Knight
     @end_pos = end_pos
   end
 
-  def add_node(root)
+  def add_node(root, prev_root = nil)
     valid_moves = validate_moves(root)
-    Node.new(root, valid_moves)
+    Node.new(root, valid_moves, prev_root)
   end
 
   def validate_moves(root)
@@ -29,8 +29,8 @@ class Knight
     # Setting a limited loop to test
     16.times do
       cur_node = queue[0]
-      cur_node.children.each { |move| queue << add_node(move) }
-      return_arr << queue[0].root
+      cur_node.children.each { |move| queue << add_node(move, cur_node.root) }
+      return_arr << queue[0]
       queue.shift
     end
 
