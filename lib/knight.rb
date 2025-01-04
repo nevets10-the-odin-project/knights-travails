@@ -1,12 +1,12 @@
 require_relative 'node'
 
 class Knight
-  attr_accessor :cur_pos, :end_pos
+  attr_accessor :root, :end_pos
 
   MOVES = [[2, 1], [1, 2], [-2, 1], [1, -2], [2, -1], [-1, 2], [-2, -1], [-1, -2]]
 
   def initialize(start_pos, end_pos)
-    @cur_pos = add_node(start_pos)
+    @root = add_node(start_pos)
     @end_pos = end_pos
   end
 
