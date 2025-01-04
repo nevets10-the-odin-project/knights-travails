@@ -3,6 +3,14 @@
 
 ---
 
+# Post-project Review
+
+I don't know how I should feel about this implementation. It could definitely be optimized by implementing a check of previous moves, but it calculates the moves so quickly that I feel like it would be a premature optimization at this point. The max number of moves I found was 6 or 7, so the scope of the method is rather small, unsurprisingly. Either way, I don't think this is a very scalable algorithm.
+
+At the end of the day, it meets the requirements of the assignment, so I'm calling it good.
+
+---
+
 # Brainstorming
 
 I don't even know where to start.
