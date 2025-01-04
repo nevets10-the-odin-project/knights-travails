@@ -6,11 +6,11 @@ class Knight
   MOVES = [[2, 1], [1, 2], [-2, 1], [1, -2], [2, -1], [-1, 2], [-2, -1], [-1, -2]]
 
   def initialize(start_pos, end_pos)
-    @cur_pos = build_tree(start_pos)
+    @cur_pos = add_node(start_pos)
     @end_pos = end_pos
   end
 
-  def build_tree(root)
+  def add_node(root)
     valid_moves = validate_moves(root)
     Node.new(root, valid_moves)
   end
