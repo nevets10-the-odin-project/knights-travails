@@ -24,14 +24,30 @@ class Knight
     return if cur_root.nil?
 
     queue = [cur_root]
+    penultimate_node = nil
 
     loop do
       cur_node = queue[0]
 
-      return cur_node if cur_node.children.include?(end_pos)
+      if cur_node.children.include?(end_pos)
+        penultimate_node = cur_node
+        break
+      end
 
-      cur_node.children.each { |move| queue << add_node(move, cur_node.root) }
+      cur_node.children.each { |move| queue << add_node(move, cur_node) }
       queue.shift
     end
+
+    path = build_path(penultimate_node)
+    path << end_pos
+    path
+  end
+
+  def build_path(node, path = [])
+    path.unshift(node.root)
+
+    return path if node.prev_node.nil?
+
+    build_path(node.prev_node, path)
   end
 end
