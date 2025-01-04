@@ -5,7 +5,7 @@ def knight_moves(start_pos, end_pos)
   return 'End out ot of bounds.' if end_pos.any? { |i| i < 0 || i > 7 }
 
   knight = Knight.new(start_pos, end_pos)
-  p knight.start_pos
+  p knight.get_next_paths
 end
 
 knight_moves([6, 7], [7, 7])

@@ -20,7 +20,20 @@ class Knight
     potential.filter { |move| move[0].between?(0, 7) && move[1].between?(0, 7) }
   end
 
-  # Build method to traverse through nodes.
-  # The tree should grow with each move to take
-  # them out of the potential list of future moves
+  def get_next_paths(cur_root = root)
+    return if cur_root.nil?
+
+    queue = [cur_root]
+    return_arr = []
+
+    # Setting a limited loop to test
+    16.times do
+      cur_node = queue[0]
+      cur_node.children.each { |move| queue << add_node(move) }
+      return_arr << queue[0].root
+      queue.shift
+    end
+
+    return_arr
+  end
 end
